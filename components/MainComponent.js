@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
 import About from './AboutComponent';
+import Contact from './ContactComponent';
 import { LinearGradient } from 'expo-linear-gradient';
 import {View, Platform, StyleSheet, Text, ScrollView, Image} from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems} from 'react-navigation';
@@ -46,6 +47,29 @@ const AboutNavigator = createStackNavigator(
             },
             headerLeft: <Icon
                 name='info-circle'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);
+
+const ContactNavigator = createStackNavigator(
+    {
+        Contact: { screen: Contact }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#53adc0'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='address-card'
                 type='font-awesome'
                 iconStyle={styles.stackIcon}
                 onPress={() => navigation.toggleDrawer()}
@@ -105,20 +129,20 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
-    //     Contact: {
-    //         screen: ContactNavigator,
-    //         navigationOptions: {
-    //             drawerLabel: 'Contact Us',
-    //             drawerIcon: ({tintColor}) => (
-    //                 <Icon
-    //                     name='address-card'
-    //                     type='font-awesome'
-    //                     size={24}
-    //                     color={tintColor}
-    //                 />
-    //             )
-    //         }
-    //     }
+        Contact: {
+            screen: ContactNavigator,
+            navigationOptions: {
+                drawerLabel: 'Contact Us',
+                drawerIcon: () => (
+                    <Icon
+                        name='address-card'
+                        type='font-awesome'
+                        size={24}
+                        color='black'
+                    />
+                )
+            }
+        }
         },
     {
         drawerBackgroundColor: '#CEC8FF',

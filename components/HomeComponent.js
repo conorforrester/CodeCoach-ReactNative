@@ -11,7 +11,7 @@ class Home extends Component {
 
     render() {
         return (
-            <ImageBackground source={require('./img/carousel3.jpg')} style={{width: '100%', height: '100%'}}>
+            <ImageBackground source={require('../assets/img/carousel3.jpg')} style={{width: '100%', height: '100%'}}>
                 <View style={styles.container}>
                     <View style={styles.homeCircle}>
                         <Text style={styles.homeCircleText}>One On One Learning</Text>
