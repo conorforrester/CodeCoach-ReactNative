@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
+import Coaches from './CoachesComponent';
 import { LinearGradient } from 'expo-linear-gradient';
 import {View, Platform, StyleSheet, Text, ScrollView, Image} from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems} from 'react-navigation';
@@ -47,6 +48,29 @@ const AboutNavigator = createStackNavigator(
             },
             headerLeft: <Icon
                 name='info-circle'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);
+
+const CoachesNavigator = createStackNavigator(
+    {
+        Coaches: { screen: Coaches }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#53adc0'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='rocket'
                 type='font-awesome'
                 iconStyle={styles.stackIcon}
                 onPress={() => navigation.toggleDrawer()}
@@ -129,6 +153,20 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
+        Coaches: {
+            screen: CoachesNavigator,
+            navigationOptions: {
+                drawerLabel: 'Coaches',
+                drawerIcon: () => (
+                    <Icon
+                        name='rocket'
+                        type='font-awesome'
+                        size={24}
+                        color='black'
+                    />
+                )
+            }
+        },
         Contact: {
             screen: ContactNavigator,
             navigationOptions: {
@@ -152,12 +190,12 @@ const MainNavigator = createDrawerNavigator(
 
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            coaches: COACHES
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         coaches: COACHES
+    //     }
+    // }
 
     render () {
         return (
