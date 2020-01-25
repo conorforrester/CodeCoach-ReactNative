@@ -20,9 +20,9 @@ class Coaches extends Component {
     render() {
         const coach = this.state.coaches.map(coach => {
             return (
-                <View style={styles.coachContainer}>
+                <View>
                     <View style={styles.coach}>
-                        <Image source={coach.image} style={{height: 200, width: 200}}></Image>
+                        <Image source={coach.image} style={{height: 250, width: 250, padding: 30}}></Image>
                         <Text>{coach.name}</Text>
                     </View>
                 </View>
@@ -42,11 +42,12 @@ class Coaches extends Component {
 const styles = StyleSheet.create({
     coachContainer: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        padding: 30,
     },
     coach: {
-        
+        transform: [{scale: 1.1}],
+        alignItems: 'center',
+        margin: 30
     }
 })
 
