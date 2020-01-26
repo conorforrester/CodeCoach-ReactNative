@@ -20,10 +20,23 @@ class Coaches extends Component {
     render() {
         const coach = this.state.coaches.map(coach => {
             return (
-                <View>
-                    <View style={styles.coach}>
-                        <Image source={coach.image} style={{height: 250, width: 250, padding: 30}}></Image>
-                        <Text>{coach.name}</Text>
+                <View style={styles.coachContainer}>
+                    <View style={styles.coachImage}>
+                        <Image 
+                            source={coach.image} 
+                            borderRadius = {250/2}
+                            borderColor = '#133975'
+                            borderWidth = {5}
+                            style={{height: 250, width: 250}}
+                        >      
+                        </Image>
+                    </View>
+                    <View style={styles.coachText}>
+                        <Text style={{color: 'white', fontSize: 25, margin: 10}}>{coach.name}</Text>
+                        <Text style={{color: 'white', fontSize: 18, marginLeft: 10}}>{coach.skills}</Text>
+                        <Text style={{color: 'white', fontSize: 18, marginLeft: 10}}>{coach.worked}</Text>
+                        <Text style={{color: 'white', fontSize: 18, marginLeft: 10}}>{coach.experience}</Text>
+                        <Text style={{color: 'white', fontSize: 18, marginLeft: 10, marginBottom: 10}}>{coach.funfact}</Text>
                     </View>
                 </View>
             )
@@ -31,9 +44,11 @@ class Coaches extends Component {
 
         return (
             <ImageBackground source={require('../assets/img/carousel3.jpg')} style={{width: '100%', height: '100%'}}>
-            <View style={styles.coachContainer}>
-                {coach}
-            </View>
+                <ScrollView>
+                    <View style={{flex: 1, alignItems: 'center'}}>
+                        {coach}
+                    </View>
+                </ScrollView>
             </ImageBackground>
         );
     }
@@ -41,13 +56,19 @@ class Coaches extends Component {
 
 const styles = StyleSheet.create({
     coachContainer: {
-        flex: 1,
         padding: 30,
     },
-    coach: {
-        transform: [{scale: 1.1}],
+    coachImage: {
         alignItems: 'center',
-        margin: 30
+        margin: 10,
+    },
+    coachText: {
+        backgroundColor: '#133975',
+        marginTop: 20,
+        width: 300,
+        borderRadius: 30,
+        opacity: 0.85,
+        padding: 10,
     }
 })
 

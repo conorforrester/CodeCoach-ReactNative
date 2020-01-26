@@ -1,7 +1,7 @@
 export const COACHES = [
     {
         id: 0,
-        name: "Mark Wang",
+        name: "Mark Zhing",
         image: require("../assets/img/coach1.jpg"),
         skills: 'Python',
         experience: '15+ Years Experience',

@@ -24,7 +24,6 @@ class Contact extends Component {
     render() {
 
         return (
-            <View>
             <ImageBackground source={require('../assets/img/carousel3.jpg')} style={{width: '100%', height: '100%'}}>
                 <ScrollView contentContainerStyle={{paddingBottom: 20}}>
                     <View style={{flex: 1, alignItems: 'center'}}>
@@ -94,7 +93,6 @@ class Contact extends Component {
                     </View>
                 </ScrollView>
             </ImageBackground>
-            </View>
         );
     }
 }
