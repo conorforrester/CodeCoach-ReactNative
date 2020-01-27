@@ -4,11 +4,10 @@ import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Coaches from './CoachesComponent';
 import { LinearGradient } from 'expo-linear-gradient';
-import {View, Platform, StyleSheet, Text, ScrollView, Image} from 'react-native';
+import {View, Platform, StyleSheet, Text, ScrollView} from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems} from 'react-navigation';
 import SafeAreaView from 'react-native-safe-area-view';
 import { Icon } from 'react-native-elements';
-import { COACHES } from '../shared/coaches'
 
 const HomeNavigator = createStackNavigator(
     {
@@ -190,12 +189,6 @@ const MainNavigator = createDrawerNavigator(
 
 
 class Main extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         coaches: COACHES
-    //     }
-    // }
 
     render () {
         return (
